@@ -1,42 +1,18 @@
-//const axios = require('axios');
 const express = require('express');
+const app = express();
+/*
 const PORT = process.env.port || 8000;
-//const request = require('request')
 const cors = require('cors')
 const request = require('postman-request');
 
-const app = express();
+
 app.use(cors());
-
-/*
-'use strict';
-
-const yelp = require('yelp-fusion');
-const client = yelp.client('AEfs3X7p9KECSOKsLcTv4eN0aM3O-yhKQfhQeosSu-XdK3PA5cZFfgDWyXC_fQumcHs_nZ4Z_qnrwy8QmpCIaw-7m_SJAef--BmHGl6pLhiG_TVtcaMWzdWajLO3YnYx');
-*/
 
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`));
 
 app.get('/', function(req, res){
     res.send("Landing");
 })
-/*
-app.get('/results', function(req, res){
-    //console.log(req.query.location);
-    client.search({
-        location: req.query.location,
-        radius: req.query.distance,
-        categories: req.query.categories,
-        price: req.query.price,
-        limit: '50',
-      }).then(response => {
-        //console.log(response.jsonBody.businesses[getRandomInt(response.jsonBody.businesses.length)].name);
-        //res.json(response.jsonBody.businesses[getRandomInt(response.jsonBody.businesses.length)].name);
-        res.json(response.jsonBody.businesses);
-      }).catch(e => {
-        console.log(e);
-      });
-})*/
 
 app.get('/results', function(req, res){
   const options = {
@@ -68,6 +44,13 @@ app.get('/results', function(req, res){
     }
 
   }
-  
   request(options, callback);
-})
+})*/
+
+app.get('/', (req, res) => {
+  res.send("welcome");
+});
+
+app.listen(3000, () =>{
+  console.log("whats up");
+});
