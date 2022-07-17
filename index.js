@@ -18,7 +18,7 @@ const client = yelp.client('AEfs3X7p9KECSOKsLcTv4eN0aM3O-yhKQfhQeosSu-XdK3PA5cZF
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`));
 
 app.get('/', function(req, res){
-    res.json("Landing");
+    res.send("Landing");
 })
 /*
 app.get('/results', function(req, res){
