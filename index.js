@@ -46,11 +46,11 @@ app.get('/results', function(req, res){
   }
   request(options, callback);
 })*/
-
+const port = process.env.port || 8000;
 app.get('/', (req, res) => {
   res.send("welcome");
 });
 
-app.listen(3000, () =>{
+app.listen(port, () =>{
   console.log("whats up");
 });
