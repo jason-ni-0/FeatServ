@@ -1,6 +1,6 @@
 //const axios = require('axios');
 const express = require('express');
-const PORT = 8000;
+const PORT = process.env.port || 8000;
 //const request = require('request')
 const cors = require('cors')
 const request = require('postman-request');
