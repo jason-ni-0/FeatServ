@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const PORT = process.env.port || 8000;
 const cors = require('cors')
@@ -46,3 +47,18 @@ app.get('/results', function(req, res){
   }
   request(options, callback);
 })
+
+app.get('/.well-known/pki-validation/', function(req, res){
+  var options = {
+      root: path.join(__dirname)
+  };
+   
+  var fileName = '0AFF3567B090FD04433E7D47CA0F90F3.txt';
+  res.sendFile(fileName, options, function (err) {
+      if (err) {
+          next(err);
+      } else {
+          console.log('Sent:', fileName);
+      }
+  });
+});
