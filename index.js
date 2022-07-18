@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-/*
+
 const PORT = process.env.port || 8000;
 const cors = require('cors')
 const request = require('postman-request');
@@ -45,12 +45,4 @@ app.get('/results', function(req, res){
 
   }
   request(options, callback);
-})*/
-const port = process.env.port || 8000;
-app.get('/', (req, res) => {
-  res.send("welcome");
-});
-
-app.listen(port, () =>{
-  console.log("whats up");
-});
+})
