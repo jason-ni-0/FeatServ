@@ -48,7 +48,7 @@ app.get('/results', function(req, res){
   request(options, callback);
 })
 
-app.get('/.well-known/pki-validation/', function(req, res){
+app.get('/.well-known/pki-validation/0AFF3567B090FD04433E7D47CA0F90F3.txt', function(req, res){
   var options = {
       root: path.join(__dirname)
   };
