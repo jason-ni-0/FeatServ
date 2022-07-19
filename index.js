@@ -19,7 +19,7 @@ app.get('/results', function(req, res){
   const options = {
     url: 'https://api.yelp.com/v3/businesses/search',
     headers: {
-      'Authorization': process.env.YELPK
+      'Authorization': 'Bearer ' + process.env.YELPK
     },
     qs: {
       location: req.query.location,
