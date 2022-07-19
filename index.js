@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -6,6 +5,7 @@ const path = require('path');
 const PORT = process.env.port || 8000;
 const cors = require('cors')
 const request = require('postman-request');
+
 
 app.use(cors());
 
@@ -19,7 +19,7 @@ app.get('/results', function(req, res){
   const options = {
     url: 'https://api.yelp.com/v3/businesses/search',
     headers: {
-      'Authorization': process.env.YELPK
+      'Authorization': 'Bearer AEfs3X7p9KECSOKsLcTv4eN0aM3O-yhKQfhQeosSu-XdK3PA5cZFfgDWyXC_fQumcHs_nZ4Z_qnrwy8QmpCIaw-7m_SJAef--BmHGl6pLhiG_TVtcaMWzdWajLO3YnYx'
     },
     qs: {
       location: req.query.location,
