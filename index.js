@@ -16,7 +16,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/results', function(req, res){
-  const options = {
+  var options = {
     url: 'https://api.yelp.com/v3/businesses/search',
     headers: {
       'Authorization': 'Bearer ' + process.env.YELPK
@@ -29,6 +29,10 @@ app.get('/results', function(req, res){
       limit: '50',
     }
   };
+  if (req.query.latitude && req.query.longitude){
+    options.qs.latitude = req.query.latitude;
+    options.qs.longitude = req.query.longitude;
+  }
   
   function callback(error, response, body) {
     if(JSON.parse(body)["error"]){
