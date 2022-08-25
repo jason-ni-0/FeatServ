@@ -22,7 +22,7 @@ app.get('/results', function(req, res){
       'Authorization': 'Bearer ' + process.env.YELPK
     },
     qs: {
-      location: 'baltimore',
+      location: req.query.location,
       radius: req.query.distance,
       categories: req.query.categories,
       price: req.query.price,
