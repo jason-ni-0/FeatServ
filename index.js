@@ -31,10 +31,6 @@ app.get('/results', function(req, res){
       longitude: -120.0
     }
   };
-  if (req.query.latitude && req.query.longitude){
-    options.qs.latitude = req.query.latitude;
-    options.qs.longitude = req.query.longitude;
-  }
   
   function callback(error, response, body) {
     if(JSON.parse(body)["error"]){
