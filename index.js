@@ -27,6 +27,8 @@ app.get('/results', function(req, res){
       categories: req.query.categories,
       price: req.query.price,
       limit: '50',
+      latitude: req.query.latitude,
+      longitude: req.query.longitude
     }
   };
   if (req.query.latitude && req.query.longitude){
