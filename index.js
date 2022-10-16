@@ -31,7 +31,7 @@ app.get('/results', function(req, res){
       longitude: req.query.longitude
     }
   };
-  
+
   function callback(error, response, body) {
     if(JSON.parse(body)["error"]){
       res.json('LOCATION_NOT_FOUND');
@@ -50,12 +50,12 @@ app.get('/results', function(req, res){
   request(options, callback);
 })
 
-app.get('/.well-known/pki-validation/0AFF3567B090FD04433E7D47CA0F90F3.txt', function(req, res){
+app.get('/.well-known/pki-validation/EE08682F2EADCC2E4D28BCE3DAF227BA.txt', function(req, res){
   var options = {
       root: path.join(__dirname)
   };
    
-  var fileName = '0AFF3567B090FD04433E7D47CA0F90F3.txt';
+  var fileName = 'EE08682F2EADCC2E4D28BCE3DAF227BA.txt';
   res.sendFile(fileName, options, function (err) {
       if (err) {
           next(err);
