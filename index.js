@@ -50,12 +50,12 @@ app.get('/results', function(req, res){
   request(options, callback);
 })
 
-app.get('/.well-known/pki-validation/EE08682F2EADCC2E4D28BCE3DAF227BA.txt', function(req, res){
+app.get('/.well-known/pki-validation/115913241F7DC604586FE1183D2BD7D7.txt', function(req, res){
   var options = {
       root: path.join(__dirname)
   };
    
-  var fileName = 'EE08682F2EADCC2E4D28BCE3DAF227BA.txt';
+  var fileName = '115913241F7DC604586FE1183D2BD7D7.txt';
   res.sendFile(fileName, options, function (err) {
       if (err) {
           next(err);
